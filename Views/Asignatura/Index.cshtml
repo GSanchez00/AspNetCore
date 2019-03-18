@@ -1,0 +1,12 @@
+﻿@model Asignatura
+
+@{
+    ViewData["Title"] = "Información Asignatura";
+    Layout= "Simple"; //Va a buscar en Shared Simple.cshtml
+}
+
+<h1>Asignaturas</h1>
+<partial name="_ObjetoEscuelaSimple" />
+
+<p>@ViewBag.Fecha</p>
+<!-- <p>Año fundacion: @ViewBag.CosaDinamica</p> -->
