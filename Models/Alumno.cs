@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ASP.NetCore.Models
 {
     public class Alumno: ObjetoEscuelaBase
     {
-        public List<Evaluación> Evaluaciones { get; set; } = new List<Evaluación>();
+        [Required]
+        public override string Nombre{get;set;}
+        public string CursoId {get;set;}
+        public Curso Curso {get; set;}
+        public List<Evaluacion> Evaluaciones { get; set; }
     }
 }

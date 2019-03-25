@@ -16,15 +16,7 @@ namespace ASP.NetCore.Controllers
         }
         public IActionResult Index()
         {
-            var escuela=_context.Escuelas.FirstOrDefault();
-            //ViewBag.CosaDinamica="Holis";
-            return View(escuela); 
+            return View(_context.Escuelas.FirstOrDefault());
         }
-
-
-        
-
     }
-
-
 }

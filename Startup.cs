@@ -36,9 +36,15 @@ namespace ASP.NetCore
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
-            //Agregamos la base de datos. 
+            //Agregamos la base de datos en memoria. 
+            // services.AddDbContext<EscuelaContext>(
+            //     options => options.UseInMemoryDatabase(databaseName:"testDB")
+            // );
+
+             
+            string connString = ConfigurationExtensions.GetConnectionString(this.Configuration, "DefaultConnectionString");
             services.AddDbContext<EscuelaContext>(
-                options => options.UseInMemoryDatabase(databaseName:"testDB")
+                options => options.UseSqlServer(connString)
             );
         }
 
